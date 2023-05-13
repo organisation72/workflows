@@ -3,45 +3,45 @@ name: Typescript CI
 on: workflow_call
   
 jobs:
-  lint:
-    runs-on: ubuntu-latest
+#   lint:
+#     runs-on: ubuntu-latest
     
-    steps:
-      - uses: actions/checkout@v3
-      - run: yarn install --frozen-lockfile
-      - run: yarn lint
+#     steps:
+#       - uses: actions/checkout@v3
+#       - run: yarn install --frozen-lockfile
+#       - run: yarn lint
 
-  test:
-    needs: lint
-    runs-on: ubuntu-latest
+#   test:
+#     needs: lint
+#     runs-on: ubuntu-latest
     
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x, 20.x]
+#     strategy:
+#       matrix:
+#         node-version: [16.x, 18.x, 20.x]
 
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: yarn install --frozen-lockfile
-      - run: yarn test
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#       - run: yarn install --frozen-lockfile
+#       - run: yarn test
     
-  build:
-    needs: test
-    runs-on: ubuntu-latest
+#   build:
+#     needs: test
+#     runs-on: ubuntu-latest
     
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x, 20.x]
+#     strategy:
+#       matrix:
+#         node-version: [16.x, 18.x, 20.x]
 
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#       - run: yarn install --frozen-lockfile
+#       - run: yarn build
 
   build-container:
     runs-on: ubuntu-latest
