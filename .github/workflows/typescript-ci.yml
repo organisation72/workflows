@@ -3,6 +3,18 @@ name: Typescript CI
 on: workflow_call
   
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - run: yarn ci
+      - uses: wearerequired/lint-action@v2.3.0
+        with:
+          eslint: true
+          prettier: true
+      
+
   build:
     runs-on: ubuntu-latest
     
