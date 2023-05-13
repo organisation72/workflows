@@ -9,10 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: yarn install --frozen-lockfile
-      - uses: wearerequired/lint-action@v2.3.0
-        with:
-          eslint: true
-          prettier: true
+      - run: yarn lint
       
 
   build:
