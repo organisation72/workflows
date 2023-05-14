@@ -20,6 +20,6 @@ jobs:
 #     needs: test
 #     uses: organisation72/workflows/.github/workflows/build-and-push-image.yml@main
 
-  docker-test:
-#     needs: lint
-    uses: organisation72/workflows/.github/workflows/docker-test.yml@main
+  docker-build:
+    needs: lint
+    uses: organisation72/workflows/.github/workflows/docker-build.yml@main
