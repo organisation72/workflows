@@ -23,8 +23,8 @@ jobs:
           push: false
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          outputs: type=docker,dest=/project/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}.tar
+          outputs: type=docker,dest=/tmp/image.tar
       - uses: actions/upload-artifact@v3
         with:
           name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          path: /project/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}.tar
+          path: /tmp/image.tar
