@@ -13,8 +13,8 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3
-      - run: docker build --target test ${{ env.IMAGE_NAME }}:test
-      - run: docker cp ${{ env.IMAGE_NAME }}:test:/project/coverage ./coverage
+      - run: docker build --target test ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:test .
+      - run: docker cp ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:test:/project/coverage ./coverage
       - uses: actions/upload-artifact@v2
         with:
           name: coverage
