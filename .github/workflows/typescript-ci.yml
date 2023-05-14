@@ -2,7 +2,9 @@ name: Typescript CI
 
 on: 
   workflow_call:
-  workflow_dispatch:
+    secrets:
+      CC_TEST_REPORTER_ID:
+        required: true
   
 jobs:
 #   lint:
@@ -27,3 +29,5 @@ jobs:
   docker-compose-test:
 #     needs: lint
     uses: organisation72/workflows/.github/workflows/docker-compose-test.yml@main
+    secrets:
+      CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
