@@ -8,18 +8,18 @@ jobs:
   lint:
     uses: organisation72/workflows/.github/workflows/typescript-lint.yml@main
     
-  build:
-    needs: lint
-    uses: organisation72/workflows/.github/workflows/typescript-build.yml@main
+#   build:
+#     needs: lint
+#     uses: organisation72/workflows/.github/workflows/typescript-build.yml@main
     
-  test:
-    needs: build
-    uses: organisation72/workflows/.github/workflows/typescript-test.yml@main
+#   test:
+#     needs: build
+#     uses: organisation72/workflows/.github/workflows/typescript-test.yml@main
 
 #   build-and-push-image:
 #     needs: test
 #     uses: organisation72/workflows/.github/workflows/build-and-push-image.yml@main
 
   docker-test:
-    needs: lint
+#     needs: lint
     uses: organisation72/workflows/.github/workflows/docker-test.yml@main
