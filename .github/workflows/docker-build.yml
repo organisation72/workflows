@@ -27,5 +27,5 @@ jobs:
           outputs: type=docker,dest=/tmp/image.tar
       - uses: actions/upload-artifact@v3
         with:
-          name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          name: image
           path: /tmp/image.tar
