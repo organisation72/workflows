@@ -1,0 +1,13 @@
+name: Typescript Lint
+
+on: 
+  workflow_call:
+  
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - run: yarn install --frozen-lockfile
+      - run: yarn lint
