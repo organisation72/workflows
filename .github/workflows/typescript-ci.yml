@@ -20,6 +20,10 @@ jobs:
 #     needs: test
 #     uses: organisation72/workflows/.github/workflows/build-and-push-image.yml@main
 
-  docker-build:
+#   docker-build:
 #     needs: lint
-    uses: organisation72/workflows/.github/workflows/docker-build.yml@main
+#     uses: organisation72/workflows/.github/workflows/docker-build.yml@main
+
+#   docker-compose-test:
+#     needs: lint
+    uses: organisation72/workflows/.github/workflows/docker-compose-test.yml@main
