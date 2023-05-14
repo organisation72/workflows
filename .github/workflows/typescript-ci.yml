@@ -17,6 +17,9 @@ jobs:
       - uses: actions/setup-node@v3
       - run: yarn install --frozen-lockfile
       - run: yarn test
+      
+  ts-lint:
+    uses: organisation72/workflows/.github/workflows/lint.yml@main
 
 #   test:
 #     needs: lint
