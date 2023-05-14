@@ -19,7 +19,7 @@ jobs:
       - run: yarn lint
       
   ts-lint:
-    uses: organisation72/workflows/.github/workflows/typescript-lint.yml@main
+    uses: organisation72/workflows/.github/workflows/typescript/lint.yml@main
 
 #   test:
 #     needs: lint
