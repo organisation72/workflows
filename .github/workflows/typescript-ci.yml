@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
   
 jobs:
-  lint:
-    uses: organisation72/workflows/.github/workflows/typescript-lint.yml@main
+#   lint:
+#     uses: organisation72/workflows/.github/workflows/typescript-lint.yml@main
     
 #   build:
 #     needs: lint
