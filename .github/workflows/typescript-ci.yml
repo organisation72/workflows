@@ -7,8 +7,8 @@ on:
         required: true
   
 jobs:
-#   lint:
-#     uses: organisation72/workflows/.github/workflows/typescript-lint.yml@main
+  lint:
+    uses: organisation72/workflows/.github/workflows/typescript-lint.yml@main
     
 #   build:
 #     needs: lint
@@ -27,7 +27,7 @@ jobs:
 #     uses: organisation72/workflows/.github/workflows/docker-build.yml@main
 
   docker-compose-test:
-#     needs: lint
+    needs: lint
     uses: organisation72/workflows/.github/workflows/docker-compose-test.yml@main
     secrets:
       CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
