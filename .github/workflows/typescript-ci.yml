@@ -4,10 +4,6 @@ on:
   workflow_call:
   workflow_dispatch:
   
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-  
 jobs:
   lint:
     uses: organisation72/workflows/.github/workflows/typescript-lint.yml@main
