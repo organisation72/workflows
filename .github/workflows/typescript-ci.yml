@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: ./typescript/lint.yml
+      - uses: organisation72/workflows/.github/actions/typescript/lint.yml@main
 
 #   test:
 #     needs: lint
