@@ -24,6 +24,6 @@ jobs:
 #     needs: lint
 #     uses: organisation72/workflows/.github/workflows/docker-build.yml@main
 
-#   docker-compose-test:
+  docker-compose-test:
 #     needs: lint
     uses: organisation72/workflows/.github/workflows/docker-compose-test.yml@main
