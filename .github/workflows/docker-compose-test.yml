@@ -13,7 +13,8 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3
-      - run: docker-compose run app yarn test --coverage
       - uses: paambaati/codeclimate-action@v4.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: docker-compose run app yarn test --coverage
