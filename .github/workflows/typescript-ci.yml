@@ -16,6 +16,10 @@ jobs:
     needs: build
     uses: organisation72/workflows/.github/workflows/typescript-test.yml@main
 
-  build-and-push-image:
-    needs: test
-    uses: organisation72/workflows/.github/workflows/build-and-push-image.yml@main
+#   build-and-push-image:
+#     needs: test
+#     uses: organisation72/workflows/.github/workflows/build-and-push-image.yml@main
+
+  docker-test:
+    needs: lint
+    uses: organisation72/workflows/.github/workflows/docker-test.yml@main
