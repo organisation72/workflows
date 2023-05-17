@@ -9,25 +9,13 @@ on:
 jobs:
   lint:
     uses: organisation72/workflows/.github/workflows/typescript-lint.yml@main
-    
-#   build:
-#     needs: lint
-#     uses: organisation72/workflows/.github/workflows/typescript-build.yml@main
-    
-#   test:
-#     needs: build
-#     uses: organisation72/workflows/.github/workflows/typescript-test.yml@main
 
-#   build-and-push-image:
-#     needs: test
-#     uses: organisation72/workflows/.github/workflows/build-and-push-image.yml@main
-
-#   docker-build:
-#     needs: lint
-#     uses: organisation72/workflows/.github/workflows/docker-build.yml@main
-
-  docker-compose-test:
+  test:
     needs: lint
     uses: organisation72/workflows/.github/workflows/docker-compose-test.yml@main
     secrets:
       CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+
+  build-and-push-image:
+    needs: test
+    uses: organisation72/workflows/.github/workflows/build-and-push-image.yml@main
